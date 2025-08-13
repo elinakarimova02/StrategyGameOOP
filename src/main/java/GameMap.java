@@ -12,7 +12,9 @@ public class GameMap {
     public int getWidth() {
         return tiles[0].length;
     }
-
+    public EnvironmentTile[][] getTiles() {
+        return tiles;
+    }
     public EnvironmentTile getTile(int x, int y) {
         if (x < 0 || y < 0 || y >= getHeight() || x >= getWidth()) {
             throw new IndexOutOfBoundsException("Position out of map bounds");

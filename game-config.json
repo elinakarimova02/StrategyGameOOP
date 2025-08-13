@@ -1,0 +1,17 @@
+{
+  "1": {
+    "title": "forest treasure",
+    "enemy":"👾",
+    "hero":"🥷",
+    "boss":"🤖",
+    "vision": 1,
+    "heroPosition": [0, 0],
+    "enemyPositions": [
+      [2, 2], 
+      [3, 4]
+    ],
+    "bossPosition": [1, 0]
+  }
+  
+ 
+}
