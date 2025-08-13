@@ -1,30 +1,11 @@
 import java.util.List;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ConsoleUI {
 
-    // public static void renderMap(GameMap map, List<Unit> units) {
-    //     System.out.println("\n=== Game Map ===");
-    //     for (int y = 0; y < map.getHeight(); y++) {
-    //         for (int x = 0; x < map.getWidth(); x++) {
-    //             Position pos = new Position(x, y);
-    //             Unit unitAtPos = findUnitAt(units, pos);
-    //             if (unitAtPos != null) {
-    //                 if (unitAtPos instanceof BossEnemy) {
-    //                     System.out.print("🤖");
-    //                 } else if (unitAtPos instanceof Hero) {
-    //                     System.out.print("🥷");
-    //                 } else {
-    //                     System.out.print("👾");
-    //                 }
-    //             } else {
-    //                 // Print the actual tile symbol from your EnvironmentTile
-    //                 System.out.print(map.getTile(x, y).getSymbol());
-    //             }
-    //         }
-    //         System.out.println();
-    //     }
-    // }
-    public static void renderMap(GameMap map, List<Unit> units) {
+
+    public static void renderMap(GameMap map, List<Unit> units, JsonNode level) {
     System.out.println("\n=== Game Map ===");
     EnvironmentTile[][] tiles = map.getTiles();
 
@@ -35,11 +16,11 @@ public class ConsoleUI {
             for (Unit unit : units) {
                 if (unit.getPosition().getX() == x && unit.getPosition().getY() == y && unit.isAlive()) {
                     if (unit instanceof BossEnemy) {
-                        System.out.print("🤖");
+                        System.out.print(level.get("boss").asText() + " "); // Boss symbol
                     } else if (unit instanceof Hero) {
-                        System.out.print("🥷 ");
+                        System.out.print(level.get("hero").asText() + " "); // Hero symbol
                     } else {
-                        System.out.print("👾");
+                        System.out.print(level.get("enemy").asText() + " "); // Enemy symbol
                     }
                     unitFound = true;
                     break;

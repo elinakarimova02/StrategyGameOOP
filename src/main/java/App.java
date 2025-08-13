@@ -51,7 +51,7 @@ private static void useIndexedAbilityCentered(Hero hero, int abilityIndex, GameC
         EnvironmentTile[][] environmentTile = new EnvironmentTile[5][10];
          for(int i=0; i < 5; i++) {
             for(int j=0; j < 10; j++) {
-                environmentTile[i][j] = new EnvironmentTile("🌲", false);
+                environmentTile[i][j] = new EnvironmentTile(level.get("landscape").asText(), false);
             }
         }
         
@@ -100,7 +100,7 @@ private static void useIndexedAbilityCentered(Hero hero, int abilityIndex, GameC
          
 
         while (hero.isAlive() && !enemies.isEmpty()) {
-            ConsoleUI.renderViewport(map, units, hero.getPosition(), 2);
+            ConsoleUI.renderViewport(map, units, hero.getPosition(), level.get("vision").asInt());
             ConsoleUI.displayStatus(hero);
             for (Enemy enemy : enemies) {
                 ConsoleUI.displayStatus(enemy);

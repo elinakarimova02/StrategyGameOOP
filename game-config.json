@@ -1,6 +1,7 @@
 {
   "1": {
     "title": "forest treasure",
+    "landscape": "🌲",
     "enemy":"👾",
     "hero":"🥷",
     "boss":"🤖",
@@ -11,7 +12,18 @@
       [3, 4]
     ],
     "bossPosition": [1, 0]
-  }
-  
+  },
+  "2": {
+    "title": "desert battle",
+    "landscape": "🏜️",
+    "enemy":"🧑‍🎤",
+    "hero":"🕵‍♂️",
+    "boss":"🧌",
+    "vision": 2,
+    "heroPosition": [0, 0],
+    "enemyPositions": [
+      [2, 3],
+      [3, 5]],
+    "bossPosition": [1, 1]}
  
 }
